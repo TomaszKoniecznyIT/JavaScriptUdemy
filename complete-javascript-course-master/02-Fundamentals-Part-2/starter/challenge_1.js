@@ -1,7 +1,8 @@
 const calcAverage = (test1, test2, test3) => (test1 + test2 + test3)/3;
 
-const avgDolphins = calcAverage(85, 54, 41);
-const avgKoalas = calcAverage(23, 34, 27);
+// test 1
+let avgDolphins = calcAverage(44, 23, 71);
+let avgKoalas = calcAverage(65, 54, 49);
 
 function checkWinner (avgDolphins, avgKoalas) {
     if (avgDolphins >= avgKoalas * 2){
@@ -11,4 +12,10 @@ function checkWinner (avgDolphins, avgKoalas) {
     } else console.log(`nobody won`);
 }
 
-checkWinner(avgDolphins, avgKoalas)
+checkWinner(avgDolphins, avgKoalas);
+
+// test2
+avgDolphins = calcAverage(85, 54, 41);
+avgKoalas = calcAverage(23, 34, 27);
+
+checkWinner(avgDolphins, avgKoalas);

@@ -17,3 +17,7 @@ const jonas2 = {
         return this.bmi
     }
 };
+
+console.log(mark.calcBMI()>jonas2.calcBMI() ? 
+`${mark.fullName} has a BMI (${mark.bmi}) which is higher than ${jonas2.fullName} whose BMI (${jonas2.bmi})` :
+`${jonas2.fullName} has a BMI (${jonas2.bmi}) which is higher than ${mark.fullName} whose BMI (${mark.bmi})`)

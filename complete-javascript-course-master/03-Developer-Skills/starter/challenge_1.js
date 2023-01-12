@@ -1,8 +1,8 @@
 function printForecast(array) {
   let forecast = "... ";
   let oneDayForecast = "";
-  for (let i = 0; i < 3; i++) {
-    oneDayForecast = `${array[i]} degrees Celsius in ${i + 1} days ...`;
+  for (let i = 0; i < array.length; i++) {
+    oneDayForecast = `${array[i]} degrees Celsius in ${i + 1} days ... `;
     forecast += oneDayForecast;
     oneDayForecast = "";
   }

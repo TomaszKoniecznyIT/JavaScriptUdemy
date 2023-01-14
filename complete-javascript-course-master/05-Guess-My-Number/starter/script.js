@@ -20,4 +20,7 @@ document.querySelector('.check').addEventListener('click', function () {
     currentScore--;
     document.querySelector('.score').textContent = currentScore;
   }
+  if (!currentScore) {
+    document.querySelector('.message').textContent = 'You lost the game !!!';
+  }
 });

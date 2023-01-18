@@ -5,7 +5,7 @@ const score0El = document.querySelector('#score--0');
 const currentScore0El = document.querySelector('#current--0');
 const player0El = document.querySelector('.player--0');
 
-const scote1El = document.getElementById('score--1');
+const score1El = document.getElementById('score--1');
 const currentScore1El = document.getElementById('current--1');
 const player1El = document.querySelector('.player--1');
 
@@ -17,7 +17,7 @@ const btnHold = document.querySelector('.btn--hold');
 
 // Starting conditions
 score0El.textContent = 0;
-scote1El.textContent = 0;
+score1El.textContent = 0;
 diceEl.classList.add('hidden');
 
 let totaleScore = [0, 0];
@@ -71,7 +71,6 @@ btnHold.addEventListener('click', function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
-      console.log(document.querySelector(`.player--${activePlayer}`));
       //if we don't do it, both settings for these classes will be active (nothing will change in appearance, because the last class is player--winner)
       document
         .querySelector(`.player--${activePlayer}`)
@@ -82,4 +81,20 @@ btnHold.addEventListener('click', function () {
       switchPlayer();
     }
   }
+});
+
+// New game btn
+btnNew.addEventListener('click', function () {
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  totaleScore = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  currentScore0El.textContent = 0;
+  currentScore1El.textContent = 0;
+  playing = true;
 });

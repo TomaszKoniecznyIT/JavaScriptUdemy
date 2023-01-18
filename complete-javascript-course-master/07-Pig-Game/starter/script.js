@@ -15,16 +15,22 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-let activePlayer = 0;
-
 // Starting conditions
 score0El.textContent = 0;
 scote1El.textContent = 0;
-let totaleScore = [0, 0];
-
 diceEl.classList.add('hidden');
 
+let totaleScore = [0, 0];
 let currentScore = 0;
+let activePlayer = 0;
+
+const switchPlayer = function () {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  currentScore = 0;
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+};
 
 // Rolling dice functionality
 btnRoll.addEventListener('click', function () {
@@ -39,15 +45,34 @@ btnRoll.addEventListener('click', function () {
   if (dice !== 1) {
     // Add dice to current score
     currentScore += dice;
-    console.log(currentScore, typeof currentScore);
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
   } else {
     // Switch to next player
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    currentScore = 0;
-    player0El.classList.toggle('player--active');
-    player1El.classList.toggle('player--active');
+    switchPlayer();
+  }
+});
+
+// Holding current score
+btnHold.addEventListener('click', function () {
+  // 1. Add current score to active player's score
+  totaleScore[activePlayer] += currentScore;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    totaleScore[activePlayer];
+
+  // 2. Check if player's score >= 100
+  if (totaleScore[activePlayer] >= 13) {
+    // Finish the game
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add('player--winner');
+    console.log(document.querySelector(`.player--${activePlayer}`));
+    //if we don't do it, both settings for these classes will be active (nothing will change in appearance, because the last class is player--winner)
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove('player--active');
+  } else {
+    // Switch to the next player
+    switchPlayer();
   }
 });

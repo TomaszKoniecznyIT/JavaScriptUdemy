@@ -36,3 +36,12 @@ calcAge(1991);
 // printAge();
 // console.log(age);
 // console.log(millenial);
+
+//  Leson 95
+// console.log(me1);
+// console.log(job1);
+// console.log(year1);
+
+var me1 = 'Jonas';
+let job1 = 'teacher';
+const year1 = 1991;

@@ -45,3 +45,12 @@ calcAge(1991);
 var me1 = 'Jonas';
 let job1 = 'teacher';
 const year1 = 1991;
+
+// Example
+if (!numProd) delShopCart();
+
+var numProd = 10;
+
+function delShopCart() {
+  console.log('All products deleted');
+}

@@ -62,3 +62,31 @@ const z = 3;
 console.log(x === window.x); // true
 console.log(y === window.y); // false
 console.log(z === window.z); //false
+
+// this
+
+console.log(this); // window
+
+const calcAge2 = function (birthYear2) {
+  console.log(2037 - birthYear2);
+  console.log(this); // undefined in strict mode
+};
+
+calcAge2(1991);
+
+const calcAge3 = birthYear2 => {
+  console.log(2037 - birthYear2);
+  console.log(this); // window
+};
+
+calcAge3(1991);
+
+const jonas2 = {
+  year: 1991,
+  calcAge4: function () {
+    console.log(this); // jonas2
+    console.log(2037 - this.year);
+  },
+};
+
+jonas2.calcAge4();

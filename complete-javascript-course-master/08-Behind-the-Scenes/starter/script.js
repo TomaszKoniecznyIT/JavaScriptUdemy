@@ -98,3 +98,7 @@ const matilda = {
 matilda.calcAge = jonas2.calcAge4; // passing the function from the jonas2 object to the object
 matilda.calcAge();
 console.log(matilda);
+
+const f = jonas2.calcAge4;
+console.log(f);
+// f();

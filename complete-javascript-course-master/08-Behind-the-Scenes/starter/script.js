@@ -90,3 +90,11 @@ const jonas2 = {
 };
 
 jonas2.calcAge4();
+
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = jonas2.calcAge4; // passing the function from the jonas2 object to the object
+matilda.calcAge();
+console.log(matilda);

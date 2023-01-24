@@ -155,3 +155,21 @@ const addArrow = (a, b) => {
   return a + b;
 };
 // addArrow(2, 5, 6); // there will be an error
+
+//  99
+console.log('----99----');
+let age1 = 30;
+let oldAge = age1;
+age1 = 31;
+console.log(age1);
+console.log(oldAge);
+
+const me = {
+  firstName: 'Jonas',
+  age: 30,
+};
+
+const friend = me;
+friend.age = 27;
+console.log('friend', friend);
+console.log('me', me); //me age property will also be changed to 27

@@ -115,17 +115,43 @@ const jonas5 = {
     console.log(this); // jonas2
     console.log(2037 - this.year5);
 
-    const self = this;
+    // Solution 1
+    const self = this; // self or that
     const isMillenial = function () {
-      console.log('self', self);
+      console.log('self --  function() ,     ', self);
       console.log(self.year5 >= 1981 && self.year5 <= 1996);
       // console.log(this.year5 >= 1981 && this.year5 <= 1996);this won't work because this will be undefinite. This can be bypassed by using self.
-      this;
     };
     isMillenial();
+
+    // Solution 2
+    // use the arrow function (=>) because it inherits so here this will be from calcAge4
+    const isMillenial2 = () => {
+      console.log(this, '=>');
+      console.log(this.year5 >= 1981 && this.year5 <= 1996);
+    };
+    isMillenial2();
   },
 
   greet: () => console.log(`Hey ${this.firstName}`, this), //after global therefore undefined (=> function) {this is not block code, object declaration only}, this - after global _ window
 };
 jonas5.greet();
 jonas5.calcAge4();
+
+const addExpr = function (a, b) {
+  console.log(typeof arguments, arguments.length);
+  console.log(arguments);
+  return a + b;
+};
+console.log(addExpr(2, 5));
+// with a normal function, it is possible to pass more arguments than declared and it will not give an error, it will now be possible to access these arguments
+console.log(addExpr(3, 5, 6, 7));
+addExpr(5, 5, 6, 7, 9);
+
+// however, when I give arguments to the arrow function, we can only give the declared number of arguments.
+
+const addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+// addArrow(2, 5, 6); // there will be an error

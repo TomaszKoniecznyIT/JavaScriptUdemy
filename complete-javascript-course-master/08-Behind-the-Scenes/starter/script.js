@@ -173,3 +173,27 @@ const friend = me;
 friend.age = 27;
 console.log('friend', friend);
 console.log('me', me); //me age property will also be changed to 27
+
+// 100
+
+console.log('----100----');
+
+const jesica2 = {
+  firstName: 'Jesica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alicja', 'Bob'],
+};
+
+const jesica3 = Object.assign({}, jesica2); // yes you can copy an object but only 1 level
+jesica3.lastName = 'Davis';
+
+console.log(jesica2);
+console.log(jesica3);
+
+// now changing the family in jesica 3
+jesica3.family.push('Tom');
+
+// We will add Tom to both jesica because the array is already a level 2 object
+console.log(jesica2);
+console.log(jesica3);

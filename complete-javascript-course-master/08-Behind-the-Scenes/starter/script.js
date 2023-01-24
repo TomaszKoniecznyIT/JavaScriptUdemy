@@ -104,6 +104,9 @@ console.log(f);
 // f();
 
 //  98.
+
+// var firstName2 = 'Matilda'; var will create a property (first name) and here we get hey Matilda bo this -> global(window)
+
 console.log('98');
 const jonas5 = {
   firstName: 'Jonas',
@@ -111,7 +114,18 @@ const jonas5 = {
   calcAge4: function () {
     console.log(this); // jonas2
     console.log(2037 - this.year5);
+
+    const self = this;
+    const isMillenial = function () {
+      console.log('self', self);
+      console.log(self.year5 >= 1981 && self.year5 <= 1996);
+      // console.log(this.year5 >= 1981 && this.year5 <= 1996);this won't work because this will be undefinite. This can be bypassed by using self.
+      this;
+    };
+    isMillenial();
   },
+
   greet: () => console.log(`Hey ${this.firstName}`, this), //after global therefore undefined (=> function) {this is not block code, object declaration only}, this - after global _ window
 };
 jonas5.greet();
+jonas5.calcAge4();

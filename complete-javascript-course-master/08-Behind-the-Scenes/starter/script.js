@@ -102,3 +102,16 @@ console.log(matilda);
 const f = jonas2.calcAge4;
 console.log(f);
 // f();
+
+//  98.
+console.log('98');
+const jonas5 = {
+  firstName: 'Jonas',
+  year5: 1991,
+  calcAge4: function () {
+    console.log(this); // jonas2
+    console.log(2037 - this.year5);
+  },
+  greet: () => console.log(`Hey ${this.firstName}`, this), //after global therefore undefined (=> function) {this is not block code, object declaration only}, this - after global _ window
+};
+jonas5.greet();

@@ -61,3 +61,18 @@ console.log(main, secondary);
 console.log(restaurant.order(2, 0));
 const [starter, mainCourse] = restaurant.order(2, 0);
 console.log(starter, mainCourse);
+
+// you can assign an array to a variable
+const nested = [2, 4, [5, 6]];
+const [i, , j] = nested;
+console.log(i, j);
+
+// but if we want to unpack an array that is in an array then we can
+const [k, , [f, g]] = nested;
+console.log(k, f, g);
+
+let [p, q, r] = [8, 9];
+console.log(p, q, r); // r - undefined
+
+[p = 1, q = 1, r = 1] = [8, 9]; // r=1
+console.log(p, q, r);

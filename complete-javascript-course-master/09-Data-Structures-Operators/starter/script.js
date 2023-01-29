@@ -11,11 +11,6 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,49 +25,106 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function (obj) {
+    console.log(obj);
+  },
 };
 
-// unpacking the array into variables
-const arr = [2, 3, 4];
+// // unpacking the array into variables
+// const arr = [2, 3, 4];
 
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
-const [x, y, z] = arr;
+// const [x, y, z] = arr;
 
-console.log(a, b, c);
-console.log(x, y, z);
+// console.log(a, b, c);
+// console.log(x, y, z);
 
-// omit the second element of the array [x, , z]
-let [main, , secondary] = restaurant.categories;
-console.log(main, secondary);
-
-// to swap items
-// const temp = main;
-// main = secondary;
-// secondary = temp;
+// // omit the second element of the array [x, , z]
+// let [main, , secondary] = restaurant.categories;
 // console.log(main, secondary);
 
-// we can also do it like this
-[main, secondary] = [secondary, main];
-console.log(main, secondary);
+// // to swap items
+// // const temp = main;
+// // main = secondary;
+// // secondary = temp;
+// // console.log(main, secondary);
 
-console.log(restaurant.order(2, 0));
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
+// // we can also do it like this
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
 
-// you can assign an array to a variable
-const nested = [2, 4, [5, 6]];
-const [i, , j] = nested;
-console.log(i, j);
+// console.log(restaurant.order(2, 0));
+// const [starter, mainCourse] = restaurant.order(2, 0);
+// console.log(starter, mainCourse);
 
-// but if we want to unpack an array that is in an array then we can
-const [k, , [f, g]] = nested;
-console.log(k, f, g);
+// // you can assign an array to a variable
+// const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j);
 
-let [p, q, r] = [8, 9];
-console.log(p, q, r); // r - undefined
+// // but if we want to unpack an array that is in an array then we can
+// const [k, , [f, g]] = nested;
+// console.log(k, f, g);
 
-[p = 1, q = 1, r = 1] = [8, 9]; // r=1
-console.log(p, q, r);
+// let [p, q, r] = [8, 9];
+// console.log(p, q, r); // r - undefined
+
+// [p = 1, q = 1, r = 1] = [8, 9]; // r=1
+// console.log(p, q, r);
+
+// 104 Destructuring objects
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restarantName,
+  openingHours: hours,
+  categories: tag,
+} = restaurant;
+console.log(restarantName, hours, tag);
+
+//  Default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj); //must be a parenthesis
+console.log(a, b);
+
+// Nested objects
+const {
+  // here we could unpack fri because there was already a variable openingHours that was previously unpacked
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
+
+// // you can, !!!mine!!!
+// const { open, close } = restaurant.openingHours.fri;
+// console.log(open, close);
+
+// you can, !!!mine!!!
+const {
+  openingHours: {
+    fri: { open, close },
+  },
+} = restaurant;
+console.log(open, close);
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+  m,
+});

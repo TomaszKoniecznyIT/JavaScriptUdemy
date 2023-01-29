@@ -38,6 +38,9 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your declicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
 // // unpacking the array into variables
@@ -85,57 +88,101 @@ const restaurant = {
 // [p = 1, q = 1, r = 1] = [8, 9]; // r=1
 // console.log(p, q, r);
 
-// 104 Destructuring objects
+// // 104 Destructuring objects
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
 
-const {
-  name: restarantName,
-  openingHours: hours,
-  categories: tag,
-} = restaurant;
-console.log(restarantName, hours, tag);
+// const {
+//   name: restarantName,
+//   openingHours: hours,
+//   categories: tag,
+// } = restaurant;
+// console.log(restarantName, hours, tag);
 
-//  Default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+// //  Default values
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
 
-// Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
+// // Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
 
-({ a, b } = obj); //must be a parenthesis
-console.log(a, b);
+// ({ a, b } = obj); //must be a parenthesis
+// console.log(a, b);
 
-// Nested objects
-const {
-  // here we could unpack fri because there was already a variable openingHours that was previously unpacked
-  fri: { open: o, close: c },
-} = openingHours;
-console.log(o, c);
+// // Nested objects
+// const {
+//   // here we could unpack fri because there was already a variable openingHours that was previously unpacked
+//   fri: { open: o, close: c },
+// } = openingHours;
+// console.log(o, c);
+
+// // // you can, !!!mine!!!
+// // const { open, close } = restaurant.openingHours.fri;
+// // console.log(open, close);
 
 // // you can, !!!mine!!!
-// const { open, close } = restaurant.openingHours.fri;
+// const {
+//   openingHours: {
+//     fri: { open, close },
+//   },
+// } = restaurant;
 // console.log(open, close);
 
-// you can, !!!mine!!!
-const {
-  openingHours: {
-    fri: { open, close },
-  },
-} = restaurant;
-console.log(open, close);
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// restaurant.orderDelivery({
+//   address: 'Via del Sole, 234',
+//   starterIndex: 1,
+// });
 
-restaurant.orderDelivery({
-  address: 'Via del Sole, 234',
-  starterIndex: 1,
-});
+// // 105 The Spread Operator
+// const arr = [7, 8, 9];
+
+// const newArr2 = [1, 2, arr];
+// console.log(newArr2);
+
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// console.log(...newArr);
+
+// const newManu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newManu);
+
+// // Copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
+
+// // Join 2 arrays
+// const manu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(manu);
+// // ... works for all iterables (arrays, strings, maps, sets) but not objects
+// const str = 'Jonas';
+// const letters = [...str, ' ', 'S.'];
+// console.log(letters);
+
+// const ingredients = [
+//   prompt("Let's make pasta Ingredient 1?"),
+//   prompt('Ingredient 1?'),
+//   prompt('Ingredient 3?'),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { fundedIn: 1998, ...restaurant, funder: 'Guiseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Chata Skrzata';
+console.log(restaurant.name);
+console.log(restaurantCopy.name);

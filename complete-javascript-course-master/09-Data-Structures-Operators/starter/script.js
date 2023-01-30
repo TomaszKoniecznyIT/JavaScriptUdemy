@@ -179,10 +179,19 @@ const restaurant = {
 // restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
 // restaurant.orderPasta(...ingredients);
 
-const newRestaurant = { fundedIn: 1998, ...restaurant, funder: 'Guiseppe' };
-console.log(newRestaurant);
+// const newRestaurant = { fundedIn: 1998, ...restaurant, funder: 'Guiseppe' };
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Chata Skrzata';
-console.log(restaurant.name);
-console.log(restaurantCopy.name);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Chata Skrzata';
+// console.log(restaurant.name);
+// console.log(restaurantCopy.name);
+
+// 106 rest pattern
+
+// Spred - ... on right side =
+const arr = [1, 2, ...[3, 4]];
+
+// rest - ... on left side =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);

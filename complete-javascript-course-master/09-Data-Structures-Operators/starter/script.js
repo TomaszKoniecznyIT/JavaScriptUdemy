@@ -254,3 +254,9 @@ console.log(0 && 6);
 console.log('Jonas' && null);
 console.log('Jonas' && 6 && undefined && 4 && 0);
 console.log(0 && '');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('onion', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('onion', 'onion');

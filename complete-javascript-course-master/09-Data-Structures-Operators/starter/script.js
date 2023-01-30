@@ -195,3 +195,15 @@ const arr = [1, 2, ...[3, 4]];
 // rest - ... on left side =
 const [a, b, ...others] = [1, 2, 3, 4, 5];
 console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+console.log([...restaurant.mainMenu, ...restaurant.starterMenu]);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat);
+console.log(weekdays);

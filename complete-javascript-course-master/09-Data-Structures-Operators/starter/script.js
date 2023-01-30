@@ -231,7 +231,7 @@ const restaurant = {
 // restaurant.orderPizza('mushrooms');
 
 // Short Circuiting
-
+console.log('------  OR ------');
 console.log(3 || 'Jonas'); // 3
 console.log('' || 'Jonas'); // Jonas
 console.log(true || 0); // true
@@ -239,3 +239,18 @@ console.log(undefined || null); // null
 console.log('' || undefined || 0); // 0 last value
 
 console.log(undefined || 0 || '' || null || 'Hello' || 23); // Hello
+
+// restaurant.numGuests = 23;
+console.log(Boolean(restaurant.numGuests));
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 11;
+console.log(guest2);
+
+console.log('------  AND ------');
+console.log('Jonas' && 6);
+console.log(0 && 6);
+console.log('Jonas' && null);
+console.log('Jonas' && 6 && undefined && 4 && 0);
+console.log(0 && '');

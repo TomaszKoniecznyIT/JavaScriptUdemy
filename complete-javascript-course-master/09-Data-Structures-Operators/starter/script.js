@@ -261,11 +261,47 @@ const restaurant = {
 
 // restaurant.orderPizza && restaurant.orderPizza('onion', 'onion');
 
-// 108 The Nullish Coalescing Operator ??
-restaurant.numGuests = 0;
-const guest1 = restaurant.numGuests || 10;
-console.log(guest1);
+// // 108 The Nullish Coalescing Operator ??
+// restaurant.numGuests = 0;
+// const guest1 = restaurant.numGuests || 10;
+// console.log(guest1);
 
-// Nullish: null and undefined ( NO: ' ' or 0 - prawda)
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log(guestCorrect);
+// // Nullish: null and undefined ( NO: ' ' or 0 - prawda)
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
+
+// 109 Logical Assignment Operators
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: 'La Pizza',
+  owner: 'Giovanni Rossi',
+};
+
+const rest3 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+
+// Or assigment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+// Nullish assignment operator (null or undefined)
+rest3.numGuests ??= 10;
+
+// rest1.owner = rest1.owner && ; // add owner to rest1 - undefined
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+rest1.owner &&= '<ANONYMOUS>'; // owner does not exist in this object
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+console.log(rest3);

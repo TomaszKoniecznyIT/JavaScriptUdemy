@@ -306,20 +306,48 @@ const restaurant = {
 // console.log(rest2);
 // console.log(rest3);
 
-// 111. Looping arrays: The for-of Loop
+// // 111. Looping arrays: The for-of Loop
 
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
-console.log([...menu.entries()]);
+// console.log([...menu.entries()]);
 
-for (const item of menu.entries()) {
-  // console.log(item); // [i, item]
-  console.log(`${item[0] + 1}: ${item[1]}`);
-}
+// for (const item of menu.entries()) {
+//   // console.log(item); // [i, item]
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
 
-for (const [i, el] of menu.entries()) {
-  console.log(`${i + 1}: ${el}`);
-}
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// 112. Enhanced Object Literals
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri'];
+
+const openingHours1 = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day${2 + 4}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant2 = {
+  name: 'Bella Pizza',
+  openingHours1,
+};
+
+console.log(restaurant2);
+console.log(openingHours1.thu);
+console.log(openingHours1.day6);

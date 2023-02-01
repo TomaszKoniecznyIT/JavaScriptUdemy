@@ -270,38 +270,45 @@ const restaurant = {
 // const guestCorrect = restaurant.numGuests ?? 10;
 // console.log(guestCorrect);
 
-// 109 Logical Assignment Operators
-const rest1 = {
-  name: 'Capri',
-  numGuests: 20,
-};
+// // 109 Logical Assignment Operators
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 20,
+// };
 
-const rest2 = {
-  name: 'La Pizza',
-  owner: 'Giovanni Rossi',
-};
+// const rest2 = {
+//   name: 'La Pizza',
+//   owner: 'Giovanni Rossi',
+// };
 
-const rest3 = {
-  name: 'Capri',
-  numGuests: 0,
-};
+// const rest3 = {
+//   name: 'Capri',
+//   numGuests: 0,
+// };
 
-// Or assigment operator
-// rest1.numGuests = rest1.numGuests || 10;
-// rest2.numGuests = rest2.numGuests || 10;
+// // Or assigment operator
+// // rest1.numGuests = rest1.numGuests || 10;
+// // rest2.numGuests = rest2.numGuests || 10;
 
-rest1.numGuests ||= 10;
-rest2.numGuests ||= 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
 
-// Nullish assignment operator (null or undefined)
-rest3.numGuests ??= 10;
+// // Nullish assignment operator (null or undefined)
+// rest3.numGuests ??= 10;
 
-// rest1.owner = rest1.owner && ; // add owner to rest1 - undefined
-// rest2.owner = rest2.owner && '<ANONYMOUS>';
+// // rest1.owner = rest1.owner && ; // add owner to rest1 - undefined
+// // rest2.owner = rest2.owner && '<ANONYMOUS>';
 
-rest1.owner &&= '<ANONYMOUS>'; // owner does not exist in this object
-rest2.owner &&= '<ANONYMOUS>';
+// rest1.owner &&= '<ANONYMOUS>'; // owner does not exist in this object
+// rest2.owner &&= '<ANONYMOUS>';
 
-console.log(rest1);
-console.log(rest2);
-console.log(rest3);
+// console.log(rest1);
+// console.log(rest2);
+// console.log(rest3);
+
+// 111. Looping arrays: The for-of Loop
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+for (const item of menu) console.log(item);

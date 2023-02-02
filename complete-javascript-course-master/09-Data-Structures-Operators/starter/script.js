@@ -324,30 +324,55 @@ const restaurant = {
 //   console.log(`${i + 1}: ${el}`);
 // }
 
-// 112. Enhanced Object Literals
+// // 112. Enhanced Object Literals
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri'];
+// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri'];
 
-const openingHours1 = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [`day${2 + 4}`]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
+// const openingHours1 = {
+//   [weekdays[3]]: {
+//     open: 12,
+//     close: 22,
+//   },
+//   [weekdays[4]]: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [`day-${2 + 4}`]: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
 
-const restaurant2 = {
-  name: 'Bella Pizza',
-  openingHours1,
-};
+// const restaurant2 = {
+//   name: 'Bella Pizza',
+//   openingHours1,
+// };
 
-console.log(restaurant2);
-console.log(openingHours1.thu);
-console.log(openingHours1.day6);
+// console.log(restaurant2);
+// console.log(openingHours1.thu);
+// console.log(openingHours1['day-6']);
+
+// 113 Optional Chaining (?.)
+
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open); // not exist mon
+if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
+
+// console.log(restaurant.openingHours.mon.open); // error
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}.`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisoto?.(0, 1) ?? 'Method does not exist');
+
+// Array
+const users = [{ name: 'Jonas', email: 'hello@wp.pl' }];
+console.log(users[0]?.name ?? 'User array empty');

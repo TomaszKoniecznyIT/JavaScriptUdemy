@@ -436,3 +436,40 @@ const restaurant = {
 
 // console.log(new Set(['Waiter', 'Waiter', 'Waiter', 'Chef', 'Chef']).size);
 // console.log(new Set('JonasTomas').size);
+
+// 117. Maps
+const restur = new Map();
+restur.set('name', 'Italo Pizza');
+restur.set(1, 'Firenze, Italy');
+console.log(restur.set(2, 'Lisbon, Portugal'));
+
+restur
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+console.log(restur.get('name'));
+console.log(restur.get(true));
+console.log(restur.get(1));
+
+const time = 8;
+console.log(
+  restur.get(time > restur.get('open') && time < restur.get('close'))
+);
+
+console.log(restur.has('categories'));
+restur.delete(1);
+console.log(restur);
+console.log(restur.size);
+// restur.clear()
+
+const arr = [1, 2];
+restur.set([1, 2], 'Test');
+console.log(restur);
+console.log(restur.get([1, 2])); // undefined
+restur.set(arr, 'Test');
+console.log(restur.get(arr));
+restur.set(document.querySelector('h1'), 'Heading');
+console.log(restur);

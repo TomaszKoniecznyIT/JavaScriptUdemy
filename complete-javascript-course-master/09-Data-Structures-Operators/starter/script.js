@@ -405,3 +405,31 @@ const restaurant = {
 // for (const [key, { open, close }] of entries) {
 //   console.log(`On ${key} we open at ${open} and close at ${close}`);
 // }
+
+// 116 Sets
+
+const ordersSet = new Set(['Pizza', 'Pasta', 'Pizza']);
+
+console.log(ordersSet);
+console.log(ordersSet.size);
+
+console.log(ordersSet.has('Pizza')); // true
+console.log(ordersSet.has('Bread')); // false
+
+ordersSet.add('Garlik Bread');
+ordersSet.add('Garlik Bread');
+console.log(ordersSet);
+
+ordersSet.delete('Garlik Bread');
+console.log(ordersSet);
+
+// ordersSet.clear() // cleans everything
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Waiter', 'Waiter', 'Chef', 'Chef'];
+const staffUnique = new Set(staff);
+console.log(staffUnique);
+const staffUnique1 = [...new Set(staff)]; // array
+console.log(staffUnique1);

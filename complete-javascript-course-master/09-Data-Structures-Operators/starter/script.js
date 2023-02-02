@@ -437,39 +437,72 @@ const restaurant = {
 // console.log(new Set(['Waiter', 'Waiter', 'Waiter', 'Chef', 'Chef']).size);
 // console.log(new Set('JonasTomas').size);
 
-// 117. Maps
-const restur = new Map();
-restur.set('name', 'Italo Pizza');
-restur.set(1, 'Firenze, Italy');
-console.log(restur.set(2, 'Lisbon, Portugal'));
+// // 117. Maps
+// const restur = new Map();
+// restur.set('name', 'Italo Pizza');
+// restur.set(1, 'Firenze, Italy');
+// console.log(restur.set(2, 'Lisbon, Portugal'));
 
-restur
-  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'We are open')
-  .set(false, 'We are closed');
+// restur
+//   .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'We are open')
+//   .set(false, 'We are closed');
 
-console.log(restur.get('name'));
-console.log(restur.get(true));
-console.log(restur.get(1));
+// console.log(restur.get('name'));
+// console.log(restur.get(true));
+// console.log(restur.get(1));
 
-const time = 8;
-console.log(
-  restur.get(time > restur.get('open') && time < restur.get('close'))
-);
+// const time = 8;
+// console.log(
+//   restur.get(time > restur.get('open') && time < restur.get('close'))
+// );
 
-console.log(restur.has('categories'));
-restur.delete(1);
-console.log(restur);
-console.log(restur.size);
-// restur.clear()
+// console.log(restur.has('categories'));
+// restur.delete(1);
+// console.log(restur);
+// console.log(restur.size);
+// // restur.clear()
 
-const arr = [1, 2];
-restur.set([1, 2], 'Test');
-console.log(restur);
-console.log(restur.get([1, 2])); // undefined
-restur.set(arr, 'Test');
-console.log(restur.get(arr));
-restur.set(document.querySelector('h1'), 'Heading');
-console.log(restur);
+// const arr = [1, 2];
+// restur.set([1, 2], 'Test');
+// console.log(restur);
+// console.log(restur.get([1, 2])); // undefined
+// restur.set(arr, 'Test');
+// console.log(restur.get(arr));
+// restur.set(document.querySelector('h1'), 'Heading');
+// console.log(restur);
+
+// 118 Maps: Iteration
+
+const question = new Map([
+  ['question', 'What is the best programing language in the word?'],
+  [1, 'C'],
+  [2, 'Java Script'],
+  [3, 'Python'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again'],
+]);
+console.log(question);
+
+// Convert object to map
+console.log(Object.entries(restaurant.openingHours));
+const hoursMap = new Map(Object.entries(restaurant.openingHours));
+console.log(hoursMap);
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+console.log(question.get(answer === question.get('correct')));
+
+// Convert map to array
+console.log([...question]);
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());

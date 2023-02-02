@@ -379,29 +379,29 @@ const restaurant = {
 
 // 114 Looping Objects: object Keys, Values and Entries
 
-// Property Name
-const properties = Object.keys(restaurant.openingHours);
-console.log(properties);
+// // Property Name
+// const properties = Object.keys(restaurant.openingHours);
+// console.log(properties);
 
-let openStr = `We are open on ${properties.length} days: `;
+// let openStr = `We are open on ${properties.length} days: `;
 
-for (const day of properties) {
-  openStr += `${day}, `;
-}
-console.log(openStr);
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+// console.log(openStr);
 
-// Property Values
-const values = Object.values(restaurant.openingHours);
-console.log(values);
+// // Property Values
+// const values = Object.values(restaurant.openingHours);
+// console.log(values);
 
-//
-const entries = Object.entries(restaurant.openingHours);
-console.log(entries);
+// //
+// const entries = Object.entries(restaurant.openingHours);
+// console.log(entries);
 
-for (const x of entries) {
-  console.log(x);
-}
+// for (const x of entries) {
+//   console.log(x);
+// }
 
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }

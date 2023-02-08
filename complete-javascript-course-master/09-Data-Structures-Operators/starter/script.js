@@ -508,6 +508,7 @@ const restaurant = {
 // console.log(question.values());
 
 // 121 String part 1
+
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -521,3 +522,28 @@ console.log('B737'.length);
 
 console.log(airline.indexOf('r'));
 console.log(airline.indexOf('T'));
+
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-3));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat.');
+  else console.log('You got lucky');
+};
+
+checkMiddleSeat('22B');
+checkMiddleSeat('22A');
+
+console.log(new String('Jonas'));
+console.log(typeof new String('Jonas'));
+console.log(typeof new String('Jonas').slice(1));

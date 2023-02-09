@@ -577,3 +577,33 @@ console.log(email === normalizedEmail);
 const priceBG = '288,97£';
 const priceUS = priceBG.replace('£', '$').replace(',', '.');
 console.log(priceUS);
+
+const announcement = 'All passenger come to boarding door 23. Bording door 23';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement);
+console.log(announcement.replace(/door/g, 'gate'));
+
+const plane2 = 'Airbus A320neo';
+console.log(plane2.includes('A320'));
+console.log(plane2.includes('Being'));
+console.log(plane2.startsWith('Air'));
+
+if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcame on board');
+  }
+};
+
+checkBaggage(' I have Gun');
+checkBaggage(' I have Knife');
+checkBaggage(' I have gun');
+checkBaggage(' I have knife');
+checkBaggage(' I have camera');

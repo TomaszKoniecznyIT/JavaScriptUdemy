@@ -560,3 +560,20 @@ console.log(passengerLower);
 const passengerCorrect =
   passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect);
+
+const email = 'hello@jonas.io';
+const loginEmail = '    hello@jonas.io \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+console.log(lowerEmail);
+
+const trimedEmail = lowerEmail.trim();
+console.log(trimedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+const priceBG = '288,97£';
+const priceUS = priceBG.replace('£', '$').replace(',', '.');
+console.log(priceUS);

@@ -547,3 +547,16 @@ checkMiddleSeat('22A');
 console.log(new String('Jonas'));
 console.log(typeof new String('Jonas'));
 console.log(typeof new String('Jonas').slice(1));
+
+// 122 string part 2
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const passenger = 'jOnaS';
+
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
+
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);

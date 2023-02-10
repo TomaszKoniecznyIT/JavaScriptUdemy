@@ -507,103 +507,111 @@ const restaurant = {
 // console.log(question.keys());
 // console.log(question.values());
 
-// 121 String part 1
+// // 121 String part 1
 
-const airline = 'TAP Air Portugal';
-const plane = 'A320';
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
 
-console.log(plane[0]);
-console.log(plane[1]);
-console.log(plane[2]);
-console.log('B737'[1]);
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B737'[1]);
 
-console.log(airline.length);
-console.log('B737'.length);
+// console.log(airline.length);
+// console.log('B737'.length);
 
-console.log(airline.indexOf('r'));
-console.log(airline.indexOf('T'));
+// console.log(airline.indexOf('r'));
+// console.log(airline.indexOf('T'));
 
-console.log(airline.lastIndexOf('r'));
-console.log(airline.indexOf('portugal'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.indexOf('portugal'));
 
-console.log(airline.slice(4));
-console.log(airline.slice(4, 7));
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 7));
 
-console.log(airline.slice(0, airline.indexOf(' ')));
-console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
 
-console.log(airline.slice(-3));
-console.log(airline.slice(1, -1));
+// console.log(airline.slice(-3));
+// console.log(airline.slice(1, -1));
 
-const checkMiddleSeat = function (seat) {
-  const s = seat.slice(-1);
-  if (s === 'B' || s === 'E') console.log('You got the middle seat.');
-  else console.log('You got lucky');
-};
+// const checkMiddleSeat = function (seat) {
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E') console.log('You got the middle seat.');
+//   else console.log('You got lucky');
+// };
 
-checkMiddleSeat('22B');
-checkMiddleSeat('22A');
+// checkMiddleSeat('22B');
+// checkMiddleSeat('22A');
 
-console.log(new String('Jonas'));
-console.log(typeof new String('Jonas'));
-console.log(typeof new String('Jonas').slice(1));
+// console.log(new String('Jonas'));
+// console.log(typeof new String('Jonas'));
+// console.log(typeof new String('Jonas').slice(1));
 
-// 122 string part 2
-console.log(airline.toLowerCase());
-console.log(airline.toUpperCase());
+// // 122 string part 2
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
 
-const passenger = 'jOnaS';
+// const passenger = 'jOnaS';
 
-const passengerLower = passenger.toLowerCase();
-console.log(passengerLower);
+// const passengerLower = passenger.toLowerCase();
+// console.log(passengerLower);
 
-const passengerCorrect =
-  passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
 
-const email = 'hello@jonas.io';
-const loginEmail = '    hello@jonas.io \n';
+// const email = 'hello@jonas.io';
+// const loginEmail = '    hello@jonas.io \n';
 
-const lowerEmail = loginEmail.toLowerCase();
-console.log(lowerEmail);
+// const lowerEmail = loginEmail.toLowerCase();
+// console.log(lowerEmail);
 
-const trimedEmail = lowerEmail.trim();
-console.log(trimedEmail);
+// const trimedEmail = lowerEmail.trim();
+// console.log(trimedEmail);
 
-const normalizedEmail = loginEmail.toLowerCase().trim();
-console.log(normalizedEmail);
-console.log(email === normalizedEmail);
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
 
-const priceBG = '288,97£';
-const priceUS = priceBG.replace('£', '$').replace(',', '.');
-console.log(priceUS);
+// const priceBG = '288,97£';
+// const priceUS = priceBG.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
 
-const announcement = 'All passenger come to boarding door 23. Bording door 23';
-console.log(announcement.replace('door', 'gate'));
-console.log(announcement.replaceAll('door', 'gate'));
-console.log(announcement);
-console.log(announcement.replace(/door/g, 'gate'));
+// const announcement = 'All passenger come to boarding door 23. Bording door 23';
+// console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+// console.log(announcement);
+// console.log(announcement.replace(/door/g, 'gate'));
 
-const plane2 = 'Airbus A320neo';
-console.log(plane2.includes('A320'));
-console.log(plane2.includes('Being'));
-console.log(plane2.startsWith('Air'));
+// const plane2 = 'Airbus A320neo';
+// console.log(plane2.includes('A320'));
+// console.log(plane2.includes('Being'));
+// console.log(plane2.startsWith('Air'));
 
-if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
-  console.log('Part of the NEW Airbus family');
-}
+// if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
+//   console.log('Part of the NEW Airbus family');
+// }
 
-const checkBaggage = function (items) {
-  const baggage = items.toLowerCase();
-  if (baggage.includes('knife') || baggage.includes('gun')) {
-    console.log('You are NOT allowed on board');
-  } else {
-    console.log('Welcame on board');
-  }
-};
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes('knife') || baggage.includes('gun')) {
+//     console.log('You are NOT allowed on board');
+//   } else {
+//     console.log('Welcame on board');
+//   }
+// };
 
-checkBaggage(' I have Gun');
-checkBaggage(' I have Knife');
-checkBaggage(' I have gun');
-checkBaggage(' I have knife');
-checkBaggage(' I have camera');
+// checkBaggage(' I have Gun');
+// checkBaggage(' I have Knife');
+// checkBaggage(' I have gun');
+// checkBaggage(' I have knife');
+// checkBaggage(' I have camera');
+
+// 123 Srting part 3
+console.log('a+very+naice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+console.log(firstName);
+console.log(lastName);

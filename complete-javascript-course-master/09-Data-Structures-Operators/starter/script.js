@@ -615,3 +615,18 @@ console.log('Jonas Schmedtmann'.split(' '));
 const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
 console.log(firstName);
 console.log(lastName);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const nameUpper = [];
+
+  for (const n of names) {
+    nameUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(nameUpper.join(' '));
+};
+
+capitalizeName('tomasz konieczny anna baran');

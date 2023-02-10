@@ -609,6 +609,7 @@ const restaurant = {
 // checkBaggage(' I have camera');
 
 // 123 Srting part 3
+
 console.log('a+very+naice+string'.split('+'));
 console.log('Jonas Schmedtmann'.split(' '));
 
@@ -624,9 +625,26 @@ const capitalizeName = function (name) {
   const nameUpper = [];
 
   for (const n of names) {
-    nameUpper.push(n[0].toUpperCase() + n.slice(1));
+    // nameUpper.push(n[0].toUpperCase() + n.slice(1));
+    nameUpper.push(n.replace(n[0], n[0].toUpperCase()));
   }
   console.log(nameUpper.join(' '));
 };
 
 capitalizeName('tomasz konieczny anna baran');
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '-').padEnd(30, '+'));
+console.log('Jonas'.padStart(20, '-').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(4523451245124512));
+console.log(maskCreditCard('4523451245124522'));
+
+const message2 = 'Bad weather...  ';
+console.log(message2.repeat(5));

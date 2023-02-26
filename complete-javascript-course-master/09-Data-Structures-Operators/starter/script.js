@@ -608,43 +608,60 @@ const restaurant = {
 // checkBaggage(' I have knife');
 // checkBaggage(' I have camera');
 
-// 123 Srting part 3
+// // 123 Srting part 3
 
-console.log('a+very+naice+string'.split('+'));
-console.log('Jonas Schmedtmann'.split(' '));
+// console.log('a+very+naice+string'.split('+'));
+// console.log('Jonas Schmedtmann'.split(' '));
 
-const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
-console.log(firstName);
-console.log(lastName);
+// const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+// console.log(firstName);
+// console.log(lastName);
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-console.log(newName);
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
 
-const capitalizeName = function (name) {
-  const names = name.split(' ');
-  const nameUpper = [];
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const nameUpper = [];
 
-  for (const n of names) {
-    // nameUpper.push(n[0].toUpperCase() + n.slice(1));
-    nameUpper.push(n.replace(n[0], n[0].toUpperCase()));
-  }
-  console.log(nameUpper.join(' '));
-};
+//   for (const n of names) {
+//     // nameUpper.push(n[0].toUpperCase() + n.slice(1));
+//     nameUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(nameUpper.join(' '));
+// };
 
-capitalizeName('tomasz konieczny anna baran');
+// capitalizeName('tomasz konieczny anna baran');
 
-const message = 'Go to gate 23!';
-console.log(message.padStart(20, '-').padEnd(30, '+'));
-console.log('Jonas'.padStart(20, '-').padEnd(30, '+'));
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(20, '-').padEnd(30, '+'));
+// console.log('Jonas'.padStart(20, '-').padEnd(30, '+'));
 
-const maskCreditCard = function (number) {
-  const str = number + '';
-  const last = str.slice(-4);
-  return last.padStart(str.length, '*');
-};
+// const maskCreditCard = function (number) {
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
 
-console.log(maskCreditCard(4523451245124512));
-console.log(maskCreditCard('4523451245124522'));
+// console.log(maskCreditCard(4523451245124512));
+// console.log(maskCreditCard('4523451245124522'));
 
-const message2 = 'Bad weather...  ';
-console.log(message2.repeat(5));
+// const message2 = 'Bad weather...  ';
+// console.log(message2.repeat(5));
+
+// 125. String methods
+const flights1 =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights1.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output1 = `${type.startsWith('_Delayed') ? '🔴' : ''} ${type
+    .replaceAll('_', ' ')
+    .slice(1)} ${getCode(from)} ${getCode(to)} (${time.replace(
+    ':',
+    'h'
+  )})`.padStart(36, ' ');
+  console.log(output1);
+}

@@ -265,6 +265,12 @@ const displayMovements = function (movements, sort = false) {
 
 displayMovements(account1.movements);
 
+// 153.
+const calcDisplayBalance = function (movments) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
 // 151.
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {

@@ -151,33 +151,45 @@
 // const withdrawals = movements.filter(mov => mov < 0);
 // console.log(withdrawals);
 
-///////////////////////////////////////
-// 153. The reduce Method
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// ///////////////////////////////////////
+// // 153. The reduce Method
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-console.log(movements);
+// console.log(movements);
 
-// accumulator -> SNOWBALL
-// const balance = movements.reduce(function (acc, cur, i, arr) {
-//   console.log(`Iteration ${i}: ${acc}`);
-//   return acc + cur;
-// }, 0);
-const balance = movements.reduce((acc, cur) => acc + cur, 0);
-console.log(balance);
+// // accumulator -> SNOWBALL
+// // const balance = movements.reduce(function (acc, cur, i, arr) {
+// //   console.log(`Iteration ${i}: ${acc}`);
+// //   return acc + cur;
+// // }, 0);
+// const balance = movements.reduce((acc, cur) => acc + cur, 0);
+// console.log(balance);
 
-let balance2 = 0;
-for (const mov of movements) balance2 += mov;
-console.log(balance2);
+// let balance2 = 0;
+// for (const mov of movements) balance2 += mov;
+// console.log(balance2);
 
-// Maximum value
-const max = movements.reduce((acc, mov) => {
-  if (acc > mov) return acc;
-  else return mov;
-}, movements[0]);
-console.log(max);
+// // Maximum value
+// const max = movements.reduce((acc, mov) => {
+//   if (acc > mov) return acc;
+//   else return mov;
+// }, movements[0]);
+// console.log(max);
 
-const max2 = movements.reduce((acc, mov) => (acc > mov ? acc : mov));
-console.log(`max ${max2}`);
+// const max2 = movements.reduce((acc, mov) => (acc > mov ? acc : mov));
+// console.log(`max ${max2}`);
+
+// ///////////////////////////////////////
+// //157. The find Method
+
+// const firstWithdrawal = movements.find(mov => mov < 0);
+// console.log(movements);
+// console.log(firstWithdrawal);
+
+// console.log(accounts);
+
+// const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+// console.log(account);
 
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////

@@ -22,3 +22,13 @@ const avg = function (ages) {
 };
 console.log(avg(test_data_2));
 console.log(avg(test_data_1));
+
+// => function
+const avg2 = ages =>
+  ages
+    .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, age, _, arry) => acc + age / arry.length, 0);
+
+console.log(avg2(test_data_2));
+console.log(avg2(test_data_1));

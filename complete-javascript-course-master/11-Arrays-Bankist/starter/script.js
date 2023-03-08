@@ -255,7 +255,7 @@ const displayMovements = function (movements, sort = false) {
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-        <div class="movements__value">${mov}€</div>
+        <div class="movements__value">${mov} €</div>
       </div>
     `;
 
@@ -268,7 +268,7 @@ displayMovements(account1.movements);
 // 153.
 const calcDisplayBalance = function (movments) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance} €`;
 };
 calcDisplayBalance(account1.movements);
 
@@ -284,4 +284,12 @@ const createUsernames = function (accs) {
 };
 createUsernames(accounts);
 
-// console.log(accounts);
+// 155.
+const calcDisplaySummary = function (movement) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes} €`;
+};
+
+calcDisplaySummary(account1.movements);

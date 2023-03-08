@@ -270,6 +270,7 @@ const calcDisplayBalance = function (movments) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance} EUR`;
 };
+calcDisplayBalance(account1.movements);
 
 // 151.
 const createUsernames = function (accs) {

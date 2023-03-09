@@ -313,6 +313,18 @@ const calcDisplaySummary = function (acc) {
   labelSumInterest.textContent = `${interest} €`;
 };
 
+// 159.
+const updateUI = function (acc) {
+  // Display movments
+  displayMovements(acc.movements);
+
+  // Display balance
+  calcDisplayBalance(acc);
+
+  // Display summary
+  calcDisplaySummary(acc);
+};
+
 //158. Event handlers
 let currentAccount;
 
@@ -336,13 +348,6 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    // Display movments
-    displayMovements(currentAccount.movements);
-
-    // Display balance
-    calcDisplayBalance(currentAccount);
-
-    // Display summary
-    calcDisplaySummary(currentAccount);
+    updateUI(currentAccount);
   }
 });

@@ -19,7 +19,7 @@
 // //142. Simple Array Methods
 // let arr = ['a', 'b', 'c', 'd', 'e'];
 
-// // SLICE
+//// SLICE
 // console.log(arr.slice(2));
 // console.log(arr.slice(2, 4));
 // console.log(arr.slice(-2));
@@ -235,35 +235,35 @@
 //   .reduce((acc, mov) => acc + mov, 0);
 // console.log(overalBalance2);
 
-///////////////////////////////////////
-// Sorting Arrays
+// ///////////////////////////////////////
+// //163. Sorting Arrays
 
-// Strings
-const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
-console.log(owners.sort());
-console.log(owners);
+// // Strings
+// const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+// console.log(owners.sort());
+// console.log(owners);
 
-// Numbers
-console.log(movements);
+// // Numbers
+// console.log(movements);
 
-// return < 0, A, B (keep order)
-// return > 0, B, A (switch order)
+// // return < 0, A, B (keep order)
+// // return > 0, B, A (switch order)
 
-// Ascending
-// movements.sort((a, b) => {
-//   if (a > b) return 1;
-//   if (a < b) return -1;
-// });
-movements.sort((a, b) => a - b);
-console.log(movements);
+// // Ascending
+// // movements.sort((a, b) => {
+// //   if (a > b) return 1;
+// //   if (a < b) return -1;
+// // });
+// movements.sort((a, b) => a - b);
+// console.log(movements);
 
-// Descending
-// movements.sort((a, b) => {
-//   if (a > b) return -1;
-//   if (a < b) return 1;
-// });
-movements.sort((a, b) => b - a);
-console.log(movements);
+// // Descending
+// // movements.sort((a, b) => {
+// //   if (a > b) return -1;
+// //   if (a < b) return 1;
+// // });
+// movements.sort((a, b) => b - a);
+// console.log(movements);
 
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
@@ -488,4 +488,12 @@ btnClose.addEventListener('click', function (e) {
   }
 
   inputCloseUsername.value = inputClosePin.value = '';
+});
+
+// 163
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });

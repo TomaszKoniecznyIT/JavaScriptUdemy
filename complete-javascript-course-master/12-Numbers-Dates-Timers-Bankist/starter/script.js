@@ -379,35 +379,73 @@ btnSort.addEventListener('click', function (e) {
 // console.log(Number('230_000'));
 // console.log(parseInt('230_000'));
 
+// ///////////////////////////////////////
+// // 174. Working with BigInt
+// console.log(2 ** 53 - 1);
+// console.log(Number.MAX_SAFE_INTEGER);
+// console.log(2 ** 53 + 1);
+// console.log(2 ** 53 + 2);
+// console.log(2 ** 53 + 3);
+// console.log(2 ** 53 + 4);
+
+// console.log(4838430248342043823408394839483204n);
+// console.log(BigInt(48384302));
+
+// // Operations
+// console.log(10000n + 10000n);
+// console.log(36286372637263726376237263726372632n * 10000000n);
+// // console.log(Math.sqrt(16n));
+
+// const huge = 20289830237283728378237n;
+// const num = 23;
+// console.log(huge * BigInt(num));
+
+// // Exceptions
+// console.log(20n > 15);
+// console.log(20n === 20);
+// console.log(typeof 20n);
+// console.log(20n == '20');
+
+// console.log(huge + ' is REALLY big!!!');
+
+// // Divisions
+// console.log(11n / 3n);
+// console.log(10 / 3);
+
 ///////////////////////////////////////
-// Working with BigInt
-console.log(2 ** 53 - 1);
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(2 ** 53 + 1);
-console.log(2 ** 53 + 2);
-console.log(2 ** 53 + 3);
-console.log(2 ** 53 + 4);
+// 175. Creating Dates
 
-console.log(4838430248342043823408394839483204n);
-console.log(BigInt(48384302));
+// Create a date
 
-// Operations
-console.log(10000n + 10000n);
-console.log(36286372637263726376237263726372632n * 10000000n);
-// console.log(Math.sqrt(16n));
+const now = new Date();
+console.log(now);
 
-const huge = 20289830237283728378237n;
-const num = 23;
-console.log(huge * BigInt(num));
+console.log(new Date('Aug 02 2020 18:05:41'));
+console.log(new Date('December 24, 2015'));
+console.log(new Date(account1.movementsDates[0]));
 
-// Exceptions
-console.log(20n > 15);
-console.log(20n === 20);
-console.log(typeof 20n);
-console.log(20n == '20');
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31));
 
-console.log(huge + ' is REALLY big!!!');
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
 
-// Divisions
-console.log(11n / 3n);
-console.log(10 / 3);
+// Working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+console.log(new Date(2142256980000));
+
+console.log(Date.now());
+
+future.setFullYear(2040);
+console.log(future);

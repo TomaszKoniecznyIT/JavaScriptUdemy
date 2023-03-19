@@ -32,9 +32,22 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+// 188.
 btnScrollTo.addEventListener('click', function (e) {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+
+//192.
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
 // ///////////////////////////////////////
 // ///////////////////////////////////////
 
@@ -181,28 +194,53 @@ btnScrollTo.addEventListener('click', function (e) {
 // //   alert('onmouseenter: Great! You are reading the heading :D');
 // // };
 
-///////////////////////////////////////
-// Event Propagation in Practice
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+// ///////////////////////////////////////
+// //191. Event Propagation in Practice
+// const randomInt = (min, max) =>
+//   Math.floor(Math.random() * (max - min + 1) + min);
+// const randomColor = () =>
+//   `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('LINK', e.target, e.currentTarget);
-  console.log(e.currentTarget === this);
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log('LINK', e.target, e.currentTarget);
+//   console.log(e.currentTarget === this);
 
-  // Stop propagation
-  e.stopPropagation();
-});
+//   // Stop propagation
+//   e.stopPropagation();
+// });
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('CONTAINER', e.target, e.currentTarget);
-});
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log('CONTAINER', e.target, e.currentTarget);
+// });
 
-document.querySelector('.nav').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('NAV', e.target, e.currentTarget);
-});
+// document.querySelector('.nav').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log('NAV', e.target, e.currentTarget);
+// });
+
+// ///////////////////////////////////////
+// //192. Page navigation
+
+// // document.querySelectorAll('.nav__link').forEach(function (el) {
+// //   el.addEventListener('click', function (e) {
+// //     e.preventDefault();
+// //     const id = this.getAttribute('href');
+// //     console.log(id);
+// //     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+// //   });
+// // });
+
+// // 1. Add event listener to common parent element
+// // 2. Determine what element originated the event
+
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   e.preventDefault();
+
+//   // Matching strategy
+//   if (e.target.classList.contains('nav__link')) {
+//     const id = e.target.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   }
+// });

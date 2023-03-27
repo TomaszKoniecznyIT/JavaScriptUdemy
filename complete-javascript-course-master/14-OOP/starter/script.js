@@ -26,6 +26,14 @@
 
 // console.log(jonas instanceof Person);
 
+// // 215. static method
+// Person.hey = function () {
+//   console.log('Hey there 👋');
+//   console.log(this);
+// };
+// Person.hey();
+// // jonas.hey();
+
 // ///////////////////////////////////////
 // //209. Prototypes
 // console.log(Person.prototype);
@@ -175,7 +183,7 @@ jessica.greet();
 // 3. Classes are executed in strict mode
 
 const walter = new PersonCl('Walter White', 1965);
-// PersonCl.hey();
+PersonCl.hey();
 
 ///////////////////////////////////////
 //214. Setters and Getters

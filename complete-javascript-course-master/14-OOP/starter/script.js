@@ -401,8 +401,7 @@
 // _approveLoan (val){}
 
 ///////////////////////////////////////
-// Encapsulation: Protected Properties and Methods
-// Encapsulation: Private Class Fields and Methods
+//224. Encapsulation: Private Class Fields and Methods
 
 // 1) Public fields
 // 2) Private fields
@@ -483,3 +482,11 @@ Account.helper();
 // console.log(acc1.#movements);
 // console.log(acc1.#pin);
 // console.log(acc1.#approveLoan(100));
+
+////////////////////////////////
+//225. Chaining
+// add return this to methods
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
+console.log(acc1.getMovements());
+
+acc1.getMovements();

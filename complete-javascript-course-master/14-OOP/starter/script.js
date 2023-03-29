@@ -366,26 +366,36 @@
 // jay.introduce();
 // jay.calcAge();
 
-/////////////////////////////////////
-//222. Another Class Example
-class Account {
-  constructor(owner, currency, pin) {
-    this.owner = owner;
-    this.currency = currency;
-    this.pin = pin;
-    this._movements = [];
-    this.locale = navigator.language;
+// /////////////////////////////////////
+// //222. Another Class Example
+// class Account {
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.pin = pin;
+//     this.movements = [];
+//     this.locale = navigator.language;
 
-    console.log(`Thanks for opening an account, ${owner}`);
-  }
+//     console.log(`Thanks for opening an account, ${owner}`);
+//   }
 
-  deposit(val) {
-    this.#movements.push(val);
-    return this;
-  }
+//   deposit(val) {
+//     this.movements.push(val);
+//     return this;
+//   }
 
-  withdraw(val) {
-    this.deposit(-val);
-    return this;
-  }
-}
+//   withdraw(val) {
+//     this.deposit(-val);
+//     return this;
+//   }
+// }
+
+//////////////////////////////////////
+// 223. Encapsulation protected properties and methods
+
+// Protected property
+// this._movements = [];
+// this._pin = pin
+
+// Protected method
+// _approveLoan (val){}

@@ -389,8 +389,8 @@ class App {
       pan: { duration: 1 },
     });
     //using the public interface
-    workout.click();
-    console.log(workout);
+    // workout.click();
+    // console.log(workout);
   }
 
   _setLocalStorage() {
@@ -407,6 +407,11 @@ class App {
     this.#workouts.forEach(work => {
       this._renderWorkout(work);
     });
+  }
+
+  reset() {
+    localStorage.removeItem('workouts');
+    location.reload();
   }
 }
 

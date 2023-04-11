@@ -88,7 +88,7 @@ const getCountryAndNeighbour = function (country) {
 // getCountryData('poland');
 // getCountryData('germany');
 
-getCountryAndNeighbour('poland');
+// getCountryAndNeighbour('gb');
 
 // callback hell
 // setTimeout(() => {
@@ -103,3 +103,26 @@ getCountryAndNeighbour('poland');
 //     }, 1000);
 //   }, 1000);
 // }, 1000);
+
+///////////////////////////////////////
+//252 Consuming Promises
+
+// const getCountryData = function (country) {
+//   fetch(`https://restcountries.com/v2/name/${country}`)
+//     .then(function (response) {
+//       console.log(response);
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       renderCountry(data[0]);
+//     });
+// };
+
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v2/name/${country}`)
+    .then(response => response.json())
+    .then(data => renderCountry(data[0]));
+};
+
+getCountryData('spain');

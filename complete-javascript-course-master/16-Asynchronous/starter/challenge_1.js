@@ -38,11 +38,11 @@ const getCountryData = function (country) {
 
 const whereAmI = function (lat, lng) {
   fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
-    .then(function (response) {
-      if (!response.ok)
-        throw new Error(`Problem with geocoding ${response.status}`);
-      console.log(response);
-      return response.json();
+    .then(function (resp) {
+      if (!resp.ok) throw new Error(`Problem with geocoding ${resp.status}`);
+      console.log(resp);
+      console.log(resp.json());
+      return resp.json();
     })
     .then(function (data) {
       console.log(data.city, data.country);
@@ -51,4 +51,4 @@ const whereAmI = function (lat, lng) {
     .catch(err => console.error(`${err.message} 💥`));
 };
 
-whereAmI(50.784, 16.2844);
+whereAmI(50.784, 16.284);

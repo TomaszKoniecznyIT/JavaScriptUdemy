@@ -260,3 +260,16 @@ const getCountryAndNeighbour = function (country) {
 // whereAmI(52.508, 13.381);
 // // whereAmI(19.037, 72.873);
 // // whereAmI(-33.933, 18.474);
+
+///////////////////////////////////////
+//258. The Event Loop in Practice
+console.log('Test start');
+setTimeout(() => console.log('0 sec timer'), 0);
+Promise.resolve('Resolved promise 1').then(res => console.log(res));
+
+Promise.resolve('Resolved promise 2').then(res => {
+  for (let i = 0; i < 10000000000; i++) {}
+  console.log(res);
+});
+
+console.log('Test end');

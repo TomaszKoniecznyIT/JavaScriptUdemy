@@ -24,6 +24,11 @@ const renderCountry = function (data, className = '') {
   countriesContainer.style.opacity = 1;
 };
 
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  countriesContainer.style.opacity = 1;
+};
+
 ///////////////////////////////////////
 //248 Our First AJAX Call: XMLHttpRequest
 
@@ -371,16 +376,16 @@ const renderCountry = function (data, className = '') {
 ///////////////////////////////////////
 //262. Consuming Promises with Async/Await
 
-// -----   1   ------
-const whereAmI = async function (country) {
-  const res = await fetch(`https://restcountries.com/v2/name/${country}`);
-  const data = await res.json();
-  console.log(data);
-  renderCountry(data[0]);
-};
+// // -----   1   ------
+// const whereAmI = async function (country) {
+//   const res = await fetch(`https://restcountries.com/v2/name/${country}`);
+//   const data = await res.json();
+//   console.log(data);
+//   renderCountry(data[0]);
+// };
 
-whereAmI('Poland');
-console.log('FIRST');
+// whereAmI('Poland');
+// console.log('FIRST');
 
 // // -------   2    ---------
 // const getPosition = function () {
@@ -406,3 +411,83 @@ console.log('FIRST');
 
 // whereAmI();
 // console.log('FIRST');
+
+///////////////////////////////////////////
+//263 error try catch
+
+// try {
+//   let y = 1;
+//   const x = 2;
+//   x = 3;
+// } catch (err) {
+//   alert(err.message);
+// }
+
+const whereAmI = async function (country) {
+  try {
+    const res = await fetch(`https://restcountries.com/v2/name/${country}`);
+    const data = await res.json();
+    console.log(data);
+    renderCountry(data[0]);
+  } catch (err) {
+    alert(err.massage);
+    renderError(`Samething went wrong ${err} and ${err.massage}`);
+  }
+};
+
+// --- Jonas ----
+// whereAmI('poland');
+// console.log('FIRST');
+
+// const getPosition = function () {
+//   return new Promise(function (resolve, reject) {
+//     navigator.geolocation.getCurrentPosition(resolve, reject);
+//   });
+// };
+
+// // fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(res => console.log(res))
+
+// const whereAmI = async function () {
+//   try {
+//     // Geolocation
+//     const pos = await getPosition();
+//     const { latitude: lat, longitude: lng } = pos.coords;
+
+//     // Reverse geocoding
+//     const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+//     if (!resGeo.ok) throw new Error('Problem getting location data');
+
+//     const dataGeo = await resGeo.json();
+//     console.log(dataGeo);
+
+//     // Country data
+//     const res = await fetch(
+//       `https://restcountries.eu/rest/v2/name/${dataGeo.country}`
+//     );
+
+//     // BUG in video:
+//     // if (!resGeo.ok) throw new Error('Problem getting country');
+
+//     // FIX:
+//     if (!res.ok) throw new Error('Problem getting country');
+
+//     const data = await res.json();
+//     console.log(data);
+//     renderCountry(data[0]);
+//   } catch (err) {
+//     console.error(`${err} 💥`);
+//     renderError(`💥 ${err.message}`);
+//   }
+// };
+// whereAmI();
+// whereAmI();
+// whereAmI();
+// console.log('FIRST');
+
+// // try {
+// //   let y = 1;
+// //   const x = 2;
+// //   y = 3;
+// // } catch (err) {
+// //   alert(err.message);
+// }

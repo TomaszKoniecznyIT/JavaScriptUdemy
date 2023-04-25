@@ -5,7 +5,7 @@
 138D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\csso\node_modules\css-tree\lib\syntax\node\SelectorList.js133268899835022315 0
 88D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\mdn-data133268899831487706 1
 128D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\lib133268899833389556 1
-71D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist133268912346864204 1
+71D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist133269004894048398 1
 107D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\@parcel\watcher\src\windows133268899831528193 1
 119D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\autofocus.js133268899832069165 0
 70D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\src133268902290399404 1
@@ -148,7 +148,7 @@
 128D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\@parcel\optimizer-htmlnano\node_modules\mdn-data133268899831336727 1
 129D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\Makefile133268899830470451 0
 86D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\braces133268899829123854 1
-87D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\src\js\controller.js133268912346687339 0
+87D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\src\js\controller.js133269004893297694 0
 105D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\csso\cjs\clean\Atrule.cjs133268899829865480 0
 109D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\source-map\lib\source-node.js133268899830218139 0
 130D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\background-clip-text.js133268899832428645 0
@@ -450,7 +450,7 @@
 105D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\is-arrayish\.istanbul.yml133268899829155292 0
 129D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\css-tree\cjs\syntax\node\common\feature-range.cjs133268899831906467 0
 114D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\type-fest\source\set-optional.d.ts133268899831528193 0
-89D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.e37f48ea.js133268912346844173 0
+89D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.e37f48ea.js133269004893908260 0
 89D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\immutable133268902841983629 1
 92D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\svgo\LICENSE133268899827970821 0
 98D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\source-map-support133268899829467206 1
@@ -543,7 +543,7 @@
 111D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\regions\CO.js133268899833686724 0
 118D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\@parcel\transformer-babel\src\utils.js133268899830801234 0
 104D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\source-map\lib\base64.js133268899829457240 0
-82D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.html133268907411423275 0
+82D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.html133269004894048398 0
 99D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\picomatch\README.md133268899829967148 0
 114D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\heif.js133268899836133073 0
 102D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\is-arrayish\.npmignore133268899828216876 0
@@ -1283,7 +1283,7 @@
 115D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\css-tree\lib\syntax\atrule\index.js133268899834803907 0
 108D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\posthtml\types\posthtml.d.ts133268899829269389 0
 139D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\csso\node_modules\css-tree\lib\syntax\node\ClassSelector.js133268899834146048 0
-93D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.e37f48ea.js.map133268912346854182 0
+93D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.e37f48ea.js.map133269004893948323 0
 94D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\svgo\README.md133268899833188255 0
 136D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\csso\node_modules\css-tree\lib\syntax\atrule\supports.js133268899835079552 0
 118D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\svgo\plugins\addClassesToSVGElement.js133268899829590398 0
@@ -3375,7 +3375,7 @@
 125D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\x-frame-options.js133268899838979642 0
 106D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\css-tree\cjs\syntax\atrule133268899833777836 1
 125D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\css-caret-color.js133268899834090970 0
-90D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\icons.21bad73c.svg133268907244167452 0
+90D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\icons.21bad73c.svg133269004893938320 0
 108D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\css-tree\cjs\syntax\function133268899833988429 1
 119D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\objectrtc.js133268899837447800 0
 123D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\css-tree\cjs\syntax\scope\atrulePrelude.cjs133268899829645481 0
@@ -4301,7 +4301,7 @@
 138D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\mdn-css-unicode-bidi-isolate.js133268899837010123 0
 140D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\mdn-css-unicode-bidi-plaintext.js133268899837020116 0
 135D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\mdn-text-decoration-color.js133268899837020116 0
-90D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.f7626f62.css133268907243416776 0
+90D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.f7626f62.css133269004893848200 0
 105D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\@parcel\core\src\utils.js133268899834407018 0
 134D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\mdn-text-decoration-line.js133268899837030125 0
 135D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\node_modules\caniuse-lite\data\features\mdn-text-decoration-style.js133268899837045158 0
@@ -5895,7 +5895,7 @@
 100D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\final\src\js\views\resultsView.js133262108304006422 0
 93D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\final\src\js\views\View.js133262108303996413 0
 94D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\18-forkify.3464ddca.js133268902876736932 0
-92D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\favicon.8b2f57bf.png133268907243436776 0
+92D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\favicon.8b2f57bf.png133269004893878233 0
 89D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.62406edb.js133268902876827031 0
-94D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.f7626f62.css.map133268907243456810 0
-89D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\logo.726d37a8.png133268907243576903 0
+94D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\index.f7626f62.css.map133269004893888242 0
+89D:\JS\JavaScriptUdemy\complete-javascript-course-master\18-forkify\dist\logo.726d37a8.png133269004893918283 0

@@ -10,7 +10,7 @@ export default class View {
     this._data = data;
     const markup = this._generateMarkup();
     // recipeContainer.innerHTML = '';
-    this._clear;
+    this._clear();
     // recipeContainer.insertAdjacentHTML('afterbegin', markup);
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }

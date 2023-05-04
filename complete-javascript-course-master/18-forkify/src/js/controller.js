@@ -19,8 +19,6 @@ if (module.hot) {
 
 const controlRecipes = async function () {
   try {
-    resultsView.renderSpinner();
-
     const id = window.location.hash.slice(1);
 
     if (!id) return;
@@ -39,12 +37,14 @@ const controlRecipes = async function () {
 
 const controlSerchResults = async function () {
   try {
+    resultsView.renderSpinner();
+
     const query = searchView.getQuery();
     if (!query) return;
 
     await model.loadSearchResults(query);
 
-    console.log(model.state.search.results);
+    // console.log(model.state.search.results);
     resultsView.render(model.state.search.results);
   } catch (err) {
     console.log(err);

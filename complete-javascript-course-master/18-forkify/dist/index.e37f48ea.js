@@ -603,6 +603,10 @@ const controlSerchResults = async function() {
         console.log(err);
     }
 };
+const controlPagination = function(goToPage) {
+    (0, _resultsViewJsDefault.default).render(_modelJs.getSearchResultsPage(goToPage));
+    (0, _paginationViewJsDefault.default).render(_modelJs.state.search);
+};
 // controlSerchResults();
 // window.addEventListener('hashchange', controlRecipes);
 // window.addEventListener('load', controlRecipes);
@@ -612,6 +616,7 @@ const controlSerchResults = async function() {
 const init = function() {
     (0, _recipeViewJsDefault.default).addHandlerRender(controlRecipes);
     (0, _searchViewJsDefault.default).addHandlerSearch(controlSerchResults);
+    (0, _paginationViewJsDefault.default).addHandlerClik(controlPagination);
 };
 init();
 
@@ -2654,7 +2659,7 @@ const loadRecipe = async function(id) {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients
         };
-        console.log(state.recipe);
+    // console.log(state.recipe);
     } catch (err) {
         console.error(`${err}`);
         throw err;
@@ -2664,7 +2669,7 @@ const loadSearchResults = async function(query) {
     try {
         state.search.query = query;
         const data = await (0, _helpersJs.getJSON)(`${(0, _configJs.API_URL)}?search=${query}`);
-        console.log(data);
+        // console.log(data);
         state.search.results = data.data.recipes.map((rec)=>{
             return {
                 id: rec.id,
@@ -3248,20 +3253,29 @@ var _viewJs = require("./View.js");
 var _viewJsDefault = parcelHelpers.interopDefault(_viewJs);
 class PaginationView extends (0, _viewJsDefault.default) {
     _parentElement = document.querySelector(".pagination");
+    addHandlerClik(handler) {
+        this._parentElement.addEventListener("click", function(e) {
+            const btn = e.target.closest(".btn--inline");
+            if (!btn) return;
+            const goToPage = +btn.dataset.goto;
+            //   console.log(goToPage);
+            handler(goToPage);
+        });
+    }
     _generateMarkup() {
         const curPage = this._data.page;
         const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
-        console.log(numPages);
+        // console.log(numPages);
         if (curPage === 1 && numPages > 1) return `
-        <button class="btn--inline pagination__btn--next">
+        <button data-goto="${curPage + 1}" class="btn--inline pagination__btn--next">
             <svg class="search__icon">
                 <use href="${0, _iconsSvgDefault.default}#icon-arrow-right"></use>
             </svg>
             <span>Page ${curPage + 1}</span>
-        </button>;
+        </button>
       `;
         if (curPage === numPages && numPages > 1) return `
-        <button class="btn--inline pagination__btn--prev">
+        <button data-goto="${curPage - 1}" class="btn--inline pagination__btn--prev">
             <svg class="search__icon">
               <use href="${0, _iconsSvgDefault.default}#icon-arrow-left"></use>
             </svg>
@@ -3269,18 +3283,18 @@ class PaginationView extends (0, _viewJsDefault.default) {
         </button>
       `;
         if (curPage < numPages) return `
-        <button class="btn--inline pagination__btn--prev">
+        <button data-goto="${curPage - 1}" class="btn--inline pagination__btn--prev">
             <svg class="search__icon">
               <use href="${0, _iconsSvgDefault.default}#icon-arrow-left"></use>
             </svg>
             <span>Page ${curPage - 1}</span>
         </button>
-        <button class="btn--inline pagination__btn--next">
+        <button data-goto="${curPage + 1}" class="btn--inline pagination__btn--next">
             <svg class="search__icon">
                 <use href="${0, _iconsSvgDefault.default}#icon-arrow-right"></use>
             </svg>
             <span>Page ${curPage + 1}</span>
-        </button>;
+        </button>
       `;
         // Page 1
         return "";

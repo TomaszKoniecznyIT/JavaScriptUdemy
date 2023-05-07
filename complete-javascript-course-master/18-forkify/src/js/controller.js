@@ -30,6 +30,9 @@ const controlRecipes = async function () {
 
     // Rendering recipe
     recipeView.render(model.state.recipe);
+
+    //test
+    controlServings();
   } catch (err) {
     console.log(err);
     recipeView.renderError();
@@ -58,6 +61,12 @@ const controlPagination = function (goToPage) {
   resultsView.render(model.getSearchResultsPage(goToPage));
   paginationView.render(model.state.search);
 };
+
+const controlServings = function () {
+  model.updateServings(8);
+  recipeView.render(model.state.recipe);
+};
+
 // controlSerchResults();
 
 // window.addEventListener('hashchange', controlRecipes);

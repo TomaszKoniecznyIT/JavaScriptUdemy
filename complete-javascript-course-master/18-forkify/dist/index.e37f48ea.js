@@ -558,7 +558,7 @@ function hmrAccept(bundle, id) {
 
 },{}],"aenu9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _esRegexpFlagsJs = require("core-js/modules/es.regexp.flags.js"); // clearBookmarks();
+var _esRegexpFlagsJs = require("core-js/modules/es.regexp.flags.js");
 var _webImmediateJs = require("core-js/modules/web.immediate.js");
 var _regeneratorRuntime = require("regenerator-runtime");
 var _modelJs = require("./model.js");
@@ -633,7 +633,7 @@ const controlBookmark = function() {
     (0, _bookmarksViewJsDefault.default).render(_modelJs.state.bookmarks);
 };
 const controlAddRecipe = function(newRecipe) {
-    console.log(newRecipe);
+    _modelJs.uploadRecipe(newRecipe);
 };
 // controlSerchResults();
 // window.addEventListener('hashchange', controlRecipes);
@@ -651,9 +651,6 @@ const init = function() {
     (0, _addRecipeViewJsDefault.default).addHandlerUpload(controlAddRecipe);
 };
 init();
-const clearBookmarks = function() {
-    localStorage.clear("bookmarks");
-};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","core-js/modules/es.regexp.flags.js":"gSXXb","core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./model.js":"Y4A21","./views/recipeView.js":"l60JC","regenerator-runtime":"dXNgZ","./views/searchView.js":"9OQAM","./views/resultsView.js":"cSbZE","./views/paginationView.js":"6z7bi","./views/bookmarksView.js":"4Lqzq","./views/addRecipeView.js":"i6DNj"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -2671,6 +2668,7 @@ parcelHelpers.export(exports, "getSearchResultsPage", ()=>getSearchResultsPage);
 parcelHelpers.export(exports, "updateServings", ()=>updateServings);
 parcelHelpers.export(exports, "addBookmark", ()=>addBookmark);
 parcelHelpers.export(exports, "delateBookmark", ()=>delateBookmark);
+parcelHelpers.export(exports, "uploadRecipe", ()=>uploadRecipe);
 var _regeneratorRuntime = require("regenerator-runtime");
 var _configJs = require("./config.js");
 var _helpersJs = require("./helpers.js");
@@ -2757,7 +2755,22 @@ const init = function() {
     const storage = localStorage.getItem("bookmarks");
     if (storage) state.bookmarks = JSON.parse(storage);
 };
-init(); // console.log(state.bookmarks);
+init();
+// console.log(state.bookmarks);
+const clearBookmarks = function() {
+    localStorage.clear("bookmarks");
+};
+const uploadRecipe = async function(newRecipe) {
+    const ingredients = Object.entries(newRecipe).filter((entry)=>entry[0].startsWith("ingredient") && entry[1] !== "").map((ing)=>{
+        const [quantity, unit, description] = ing[1].replaceAll(" ", "").split(",");
+        return {
+            quantity,
+            unit,
+            description
+        };
+    });
+    console.log(ingredients);
+};
 
 },{"regenerator-runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./config.js":"k5Hzs","./helpers.js":"hGI1E"}],"k5Hzs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

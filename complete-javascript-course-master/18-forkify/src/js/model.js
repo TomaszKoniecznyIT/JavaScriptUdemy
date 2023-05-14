@@ -104,3 +104,20 @@ const init = function () {
 };
 init();
 // console.log(state.bookmarks);
+
+const clearBookmarks = function () {
+  localStorage.clear('bookmarks');
+};
+// clearBookmarks();
+
+export const uploadRecipe = async function (newRecipe) {
+  const ingredients = Object.entries(newRecipe)
+    .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
+    .map(ing => {
+      const [quantity, unit, description] = ing[1]
+        .replaceAll(' ', '')
+        .split(',');
+      return { quantity, unit, description };
+    });
+  console.log(ingredients);
+};

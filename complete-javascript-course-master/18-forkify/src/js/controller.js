@@ -90,7 +90,7 @@ const controlBookmark = function () {
 };
 
 const controlAddRecipe = function (newRecipe) {
-  console.log(newRecipe);
+  model.uploadRecipe(newRecipe);
 };
 
 // controlSerchResults();
@@ -112,8 +112,3 @@ const init = function () {
   addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();
-
-const clearBookmarks = function () {
-  localStorage.clear('bookmarks');
-};
-// clearBookmarks();

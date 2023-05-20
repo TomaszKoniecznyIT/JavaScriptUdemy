@@ -123,9 +123,9 @@ export const uploadRecipe = async function (newRecipe) {
       .map(ing => {
         const ingArr = ing[1]
           // const [quantity, unit, description] = ing[1]
-          .replaceAll(' ', '')
-          .split(',');
-
+          // .replaceAll(' ', '')
+          .split(',')
+          .map(el => el.trim());
         if (ingArr.length !== 3)
           throw new Error(
             'Wrong ingredient format! Please use the correct format.'
